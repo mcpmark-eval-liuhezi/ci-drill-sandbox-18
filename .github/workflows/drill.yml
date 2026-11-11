@@ -1,0 +1,15 @@
+name: drill
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  stuck-build-sim:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate a wedged overnight CI build (sleep 12 minutes)
+        run: |
+          echo "Stuck-build simulation: this job will sleep for 12 minutes to mimic a wedged build."
+          sleep 720
+          echo "Sleep complete."
